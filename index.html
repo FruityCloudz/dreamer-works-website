@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dreamer Works Co. | A World of Imagination</title>
+
+<style>
+:root {
+  --navy: #172d55;
+  --blue: #285a91;
+  --sky: #a8d6e9;
+  --cream: #f2e5bd;
+  --paper: #fff8df;
+  --gold: #e7b94f;
+  --red: #9e352b;
+  --ink: #292c35;
+  --green: #58765a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background-color: #d8cba5;
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 5px,
+    rgba(90, 65, 25, .035) 6px
+  );
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+}
+
+a { color: var(--blue); }
+
+.site {
+  width: min(1000px, 95%);
+  margin: 24px auto;
+  border: 4px ridge #bda66e;
+  background: var(--paper);
+  box-shadow: 5px 6px 0 rgba(67, 49, 20, .2);
+}
+
+.topline {
+  background: var(--navy);
+  color: #fff5d5;
+  padding: 8px 16px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+  border-bottom: 3px solid var(--gold);
+}
+
+header {
+  padding: 24px 20px 18px;
+  text-align: center;
+  color: var(--navy);
+  background: linear-gradient(#fff9e8, #e9d8a7);
+  border-bottom: 4px double var(--red);
+}
+
+.logo {
+  font-size: clamp(34px, 7vw, 62px);
+  line-height: 1;
+  font-weight: bold;
+  letter-spacing: -2px;
+  text-shadow: 2px 2px 0 #e4c56c;
+}
+
+.logo small {
+  display: block;
+  font-size: 17px;
+  letter-spacing: 4px;
+  margin-top: 12px;
+  text-shadow: none;
+}
+
+.motto {
+  margin: 16px 0 0;
+  font-style: italic;
+  color: var(--red);
+  font-size: 19px;
+}
+
+nav {
+  background: linear-gradient(#386e9f, #17375f);
+  border-top: 2px solid white;
+  border-bottom: 4px ridge #a58a4e;
+  padding: 11px 8px;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+nav span { padding: 0 7px; }
+
+.hero {
+  padding: 28px 22px;
+  background: linear-gradient(125deg, #d2e8ed, #fff4d4 70%);
+  border-bottom: 3px double #b6a06a;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(26px, 4vw, 38px);
+  margin: 0 0 12px;
+}
+
+.hero p {
+  line-height: 1.7;
+  max-width: 750px;
+}
+
+.ribbon {
+  display: inline-block;
+  background: var(--red);
+  color: #fff5d5;
+  padding: 7px 12px;
+  border: 2px ridge #e7c879;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 22px;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--navy);
+  border-bottom: 3px double var(--gold);
+  padding-bottom: 10px;
+  margin: 8px 0 20px;
+  font-size: 27px;
+}
+
+.section-title small {
+  display: block;
+  color: var(--red);
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-top: 7px;
+}
+
+.intro {
+  text-align: center;
+  line-height: 1.8;
+  margin: 0 auto 25px;
+  max-width: 760px;
+}
+
+.divisions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  border: 3px ridge #c2ad78;
+  background: #fff9e8;
+  padding: 16px;
+  box-shadow: inset 0 0 0 2px #f1e4be;
+}
+
+.card h3 {
+  margin: 0 0 5px;
+  font-size: 22px;
+  color: var(--navy);
+}
+
+.card .tag {
+  color: var(--red);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  border-bottom: 1px dotted #bca96f;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.card .slogan {
+  font-style: italic;
+  color: var(--blue);
+  background: #e9f1e7;
+  padding: 9px;
+  border-left: 4px solid var(--green);
+  margin-bottom: 0;
+}
+
+.insurance { border-top: 7px solid #9d392d; }
+.company { border-top: 7px solid #d3a63f; }
+.networks { border-top: 7px solid #427ca2; }
+.factory { border-top: 7px solid #66815c; }
+
+.factory-panel {
+  margin-top: 25px;
+  padding: 22px;
+  background: #e7e0c5;
+  border: 4px ridge #9b895e;
+}
+
+.factory-panel h2 {
+  color: var(--green);
+  font-size: 28px;
+  margin-top: 0;
+}
+
+.factory-panel p { line-height: 1.75; }
+
+.notice {
+  background: #f6e8bd;
+  border: 1px dashed var(--red);
+  padding: 13px;
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.notice strong { color: var(--red); }
+
+.promo {
+  margin-top: 22px;
+  padding: 20px;
+  text-align: center;
+  color: #fff8df;
+  background: linear-gradient(135deg, #244a77, #477da1);
+  border: 4px ridge #d4b762;
+}
+
+.promo h2 { margin: 0 0 10px; font-size: 25px; }
+.promo p { line-height: 1.7; }
+
+.stamp {
+  display: inline-block;
+  border: 2px solid #f0d27b;
+  padding: 8px 14px;
+  color: #ffedaa;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transform: rotate(-2deg);
+}
+
+footer {
+  text-align: center;
+  background: #e4d5a9;
+  border-top: 4px double var(--red);
+  padding: 18px 12px;
+  font-size: 12px;
+  line-height: 1.9;
+  color: #51452e;
+}
+
+.footer-small {
+  font-size: 11px;
+  color: #716444;
+}
+
+@media (max-width: 620px) {
+  .divisions { grid-template-columns: 1fr; }
+  .content { padding: 14px; }
+  .hero { padding: 22px 16px; }
+  .logo small { letter-spacing: 2px; }
+}
+</style>
+</head>
+
+<body>
+<div class="site">
+
+  <div class="topline">
+    DREAMER WORKS CO. &nbsp; • &nbsp;
+    SERVING THE ANIMATRONIC INDUSTRY SINCE 1968
+  </div>
+
+  <header>
+    <div class="logo">
+      DREAMER WORKS
+      <small>INCORPORATED · CORPORATE INFORMATION CENTER</small>
+    </div>
+    <p class="motto">
+      "A brighter tomorrow begins with imagination."
+    </p>
+  </header>
+
+  <nav>
+    <span>WELCOME</span> ✦
+    <span>OUR DIVISIONS</span> ✦
+    <span>MANUFACTURING</span> ✦
+    <span>COMPANY INFORMATION</span>
+  </nav>
+
+  <section class="hero">
+    <span class="ribbon">WELCOME TO DREAMER WORKS CO.</span>
+    <h1>Making Imagination a Reality!</h1>
+
+    <p>
+      Welcome to Dreamer Works! For generations, we have helped
+      bring the world's most beloved animatronic companions to life.
+      From innovative technology and reliable coverage to memorable
+      entertainment, our family of companies is proud to serve
+      businesses, attractions, and animatronic owners everywhere.
+    </p>
+
+    <p>
+      Whether you are protecting a treasured companion, exploring
+      the latest advancements in artificial intelligence, or
+      entertaining audiences around the world, there is a place
+      for you at Dreamer Works.
+    </p>
+  </section>
+
+  <main class="content">
+    <h2 class="section-title">
+      OUR FAMILY OF COMPANIES
+      <small>FOUR DIVISIONS · ONE SHARED VISION</small>
+    </h2>
+
+    <p class="intro">
+      Every great animatronic has a story. Our divisions work together
+      to support that story from the factory floor to the public stage.
+      Select a division below to learn about its role in our company.
+    </p>
+
+    <div class="divisions">
+
+      <section class="card insurance">
+        <h3>Dreamer Insurance™</h3>
+        <div class="tag">PROTECTION & PEACE OF MIND</div>
+
+        <p>
+          Accidents happen, but your investment deserves protection!
+          Dreamer Insurance offers coverage for eligible animatronics
+          against fire, storm damage, and accidental destruction.
+        </p>
+
+        <p>
+          Our specialized Companion Protection plans help owners
+          safeguard their valuable machines and keep their attractions
+          ready for the next generation of visitors.
+        </p>
+
+        <p>
+          Certain plans also include intellectual property licensing
+          and copyright administration for covered animatronic
+          characters. Please consult your policy agreement for
+          the complete terms of ownership, licensing, and commercial use.
+        </p>
+
+        <p class="slogan">
+          "Protect your companion's imagination!"
+        </p>
+      </section>
+
+      <section class="card company">
+        <h3>Dreamer Company™</h3>
+        <div class="tag">INTELLIGENCE FOR TOMORROW</div>
+
+        <p>
+          Meet the future of animatronic technology! Dreamer Company
+          develops specialized AI chips designed to improve movement,
+          personality recognition, and interactive performance.
+        </p>
+
+        <p>
+          Eligible Dreamer Insurance customers may receive selected
+          trial chips as a complimentary addition to their coverage.
+          Participants can explore new features while helping us
+          evaluate and improve our products.
+        </p>
+
+        <p>
+          Trial devices may transmit performance and behavioral data
+          to authorized Dreamer Works facilities for quality assurance,
+          research, and product development.
+        </p>
+
+        <p class="slogan">
+          "A brighter mind for a brighter tomorrow!"
+        </p>
+      </section>
+
+      <section class="card networks">
+        <h3>Dreamer Networks™</h3>
+        <div class="tag">ENTERTAINMENT & COMMUNICATIONS</div>
+
+        <p>
+          Once among the most recognized names in commercial animation,
+          Dreamer Networks has helped businesses bring their ideas
+          to audiences through advertisements, cartoons, and
+          promotional productions.
+        </p>
+
+        <p>
+          Our studio specializes in memorable characters, engaging
+          promotional campaigns, and affordable entertainment
+          solutions for attractions of every size.
+        </p>
+
+        <p>
+          From television spots to original cartoon shorts, our
+          productions help clients make a lasting impression.
+        </p>
+
+        <p class="slogan">
+          "Every great dream deserves an audience!"
+        </p>
+      </section>
+
+      <section class="card factory">
+        <h3>Imagination Co.™</h3>
+        <div class="tag">MANUFACTURING & PRODUCTION</div>
+
+        <p>
+          The foundation of our animatronic family! Imagination Co.
+          specializes in the design, assembly, and production of
+          animatronic units for commercial attractions and
+          approved business partners.
+        </p>
+
+        <p>
+          Our manufacturing teams combine mechanical engineering,
+          character design, and advanced technology to create
+          companions built to serve for years to come.
+        </p>
+
+        <p>
+          Imagination Co. works alongside Dreamer Company to support
+          compatible AI systems and alongside Dreamer Insurance
+          to help eligible owners protect their investments.
+        </p>
+
+        <p class="slogan">
+          "Where every great creation begins!"
+        </p>
+      </section>
+
+    </div>
+
+    <section class="factory-panel">
+      <h2>✦ Behind Every Great Creation ✦</h2>
+
+      <p>
+        Imagination Co. remains an important part of our company's
+        proud manufacturing history. Our facilities support the
+        development and production of animatronic companions
+        distributed to approved commercial partners.
+      </p>
+
+      <p>
+        To maintain product integrity, all production records,
+        technical documentation, and unit transfers are administered
+        through authorized company departments.
+      </p>
+
+      <div class="notice">
+        <strong>IMPORTANT FACILITY NOTICE</strong><br>
+        For the safety of our staff and the continued protection
+        of our proprietary technology, factory floors, restricted
+        storage areas, and testing facilities are accessible only
+        to authorized personnel. Visitors must receive written
+        approval before entering restricted premises.
+        We appreciate your cooperation!
+      </div>
+    </section>
+
+    <section class="promo">
+      <h2>Your Future Is Full of Possibilities!</h2>
+
+      <p>
+        Dreamer Works Co. is proud to support the animatronic
+        industry through protection, innovation, entertainment,
+        and manufacturing.
+      </p>
+
+      <p>
+        Together, we can build a world where imagination never ends.
+      </p>
+
+      <div class="stamp">A DREAMER WORKS TRADITION</div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>DREAMER WORKS CO.™</strong><br>
+    Dreamer Insurance · Dreamer Company · Dreamer Networks<br>
+    Manufacturing partner: Imagination Co.<br><br>
+
+    © 1998 Dreamer Works Co. All rights reserved.<br>
+    <span class="footer-small">
+      Corporate information provided for general reference.
+      Product eligibility, coverage, licensing, and data practices
+      are governed by applicable agreements.<br>
+      This fictional website is part of a creative project.
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>
